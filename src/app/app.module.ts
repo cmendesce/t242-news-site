@@ -3,10 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SidebarCategoriasComponent } from './sidebar-categorias/sidebar-categorias.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { TeamsComponent } from './teams/teams.component';
+import { AdComponent } from './ad/ad.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidebarCategoriasComponent,
+    NewsletterComponent,
+    TeamsComponent,
+    AdComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
