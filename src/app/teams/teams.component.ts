@@ -1,3 +1,4 @@
+import { TeamsService } from './../services/teams.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private teamsService: TeamsService) { }
+
+  teams;
 
   ngOnInit(): void {
+    this.teams = this.teamsService.findTeams();
   }
 
 }

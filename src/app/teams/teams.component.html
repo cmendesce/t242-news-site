@@ -1,12 +1,12 @@
 <div class="card">
   <div class="card-body">
-    <ul>
-      <li>Time 1</li>
-      <li>Time 2</li>
-      <li>Time 3</li>
-      <li>Time 4</li>
-      <li>Time 5</li>
-      <li>Time 6</li>
-    </ul>
+    <h5>Brasileirão - Série A</h5>
+    <div class="grid-container">
+      <div *ngFor="let team of teams">
+        <a href="teams/{{team.key}}">
+          <img alt="{{team.name}}" src="{{team.flag}}" style="width: 32px; height: 32px;">
+        </a>
+      </div>
+    </div>
   </div>
 </div>
