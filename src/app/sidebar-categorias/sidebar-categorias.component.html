@@ -1,12 +1,7 @@
-
-
-    <ul class="list-group">
-      <li class="list-group-item">Categoria 1</li>
-      <li class="list-group-item">Categoria 2</li>
-      <li class="list-group-item">Categoria 3</li>
-      <li class="list-group-item">Categoria 4</li>
-      <li class="list-group-item">Categoria 5</li>
-      <li class="list-group-item">Categoria 6</li>
-    </ul>
-
-
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let category of categories">
+    <a [routerLink]="['/news']" [queryParams]="{ category: category.id }">
+      {{ category.name }}
+    </a>
+  </li>
+</ul>

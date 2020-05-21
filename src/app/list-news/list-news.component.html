@@ -1,0 +1,25 @@
+
+
+<h1 *ngIf="category"  >{{category.name}}</h1>
+
+<h1 *ngIf="term">{{term}}</h1>
+
+<div class="row" style="padding: 16px">
+
+  <div class="alert alert-primary" *ngIf="newsList.length == 0"  role="alert">
+    Sem notícias para mostrar
+  </div>
+
+  <div class="card" *ngFor="let news of newsList" class="card" style="width: 18rem; margin: 18px 14px">
+    <img src="http://placekitten.com/200/300" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">
+        {{news.title}}
+      </h5>
+      <p class="card-text">
+        {{news.article}}
+      </p>
+      <a href="{{news.source}}" target="_blank" class="btn btn-primary">Veja no site</a>
+    </div>
+  </div>
+</div>

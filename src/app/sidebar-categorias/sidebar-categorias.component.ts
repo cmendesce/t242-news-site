@@ -1,3 +1,4 @@
+import { NewsService } from './../services/news.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarCategoriasComponent implements OnInit {
 
-  constructor() { }
+
+  categories = [];
+
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
+    this.categories = this.newsService.findCategories();
   }
 
 }
