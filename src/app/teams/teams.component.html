@@ -3,7 +3,7 @@
     <h5>Brasileirão - Série A</h5>
     <div class="grid-container">
       <div *ngFor="let team of teams">
-        <a href="teams/{{team.key}}">
+        <a href="news?team={{team.key}}">
           <img alt="{{team.name}}" src="{{team.flag}}" style="width: 32px; height: 32px;">
         </a>
       </div>

@@ -4,6 +4,8 @@
 
 <h1 *ngIf="term">{{term}}</h1>
 
+<h1 *ngIf="team" ><img src="{{team.flag}}" width="42" height="42"> {{team.name}}</h1>
+
 <div class="row" style="padding: 16px">
 
   <div class="alert alert-primary" *ngIf="newsList.length == 0"  role="alert">

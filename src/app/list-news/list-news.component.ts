@@ -1,3 +1,4 @@
+import { TeamsService } from './../services/teams.service';
 import { NewsService } from './../services/news.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -11,19 +12,24 @@ export class ListNewsComponent implements OnInit {
 
   category;
   term = '';
+  team = {};
   newsList = [];
 
-  constructor(private route: ActivatedRoute, private service: NewsService) { }
+  constructor(private route: ActivatedRoute, private service: NewsService, private teamsService: TeamsService) { }
 
   ngOnInit(): void {
 
     this.route.queryParams.subscribe(param => {
       this.category = this.service.findCategoryById(Number(param.category));
       this.term = param.term;
+      this.team = this.teamsService.findTeamByKey(param.team);
+
       if (this.category) {
         this.newsList = this.service.findNewsByCategory(this.category);
       } else if (this.term) {
         this.newsList = this.service.filterNews(this.term);
+      } else if (this.team) {
+        this.newsList = this.service.findNewsByTeam(this.team?.key);
       }
     });
   }
