@@ -1,3 +1,4 @@
+import { NewsService } from './../services/news.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  breakingNews = {};
+  relatedNews = [];
+
+  constructor(private service: NewsService) { }
 
   ngOnInit(): void {
+    const news = this.service.findBreakingNews();
+    this.breakingNews = news[0];
+    this.relatedNews = news.slice(1 , news.length - 1);
   }
-
 }
