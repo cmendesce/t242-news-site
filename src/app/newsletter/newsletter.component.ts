@@ -12,4 +12,7 @@ export class NewsletterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  subscribe(email: string) {
+    alert('Email ' + email + ' cadastrado com sucesso.');
+  }
 }
