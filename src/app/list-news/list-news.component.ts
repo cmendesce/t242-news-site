@@ -1,7 +1,9 @@
+import { Category } from './../models/category.model';
 import { TeamsService } from './../services/teams.service';
 import { NewsService } from './../services/news.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Team } from '../models/team.model';
 
 @Component({
   selector: 'app-list-news',
@@ -10,9 +12,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ListNewsComponent implements OnInit {
 
-  category;
+  category: Category;
   term = '';
-  team = {};
+  team: Team;
   newsList = [];
 
   constructor(private route: ActivatedRoute, private service: NewsService, private teamsService: TeamsService) { }
@@ -28,7 +30,7 @@ export class ListNewsComponent implements OnInit {
         this.newsList = this.service.findNewsByCategory(this.category);
       } else if (this.term) {
         this.newsList = this.service.filterNews(this.term);
-      } else if (this.team) {
+      } else if (this.team && this.team) {
         this.newsList = this.service.findNewsByTeam(this.team?.key);
       }
     });

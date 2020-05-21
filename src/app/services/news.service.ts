@@ -1,6 +1,6 @@
 import { Category } from './../models/category';
 import { Injectable } from '@angular/core';
-import * as faker from 'faker';
+import { News } from '../models/news.model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +19,7 @@ export class NewsService {
     { id: 10, name: 'Categoria 10' },
   ];
 
-  newsList = [
+  newsList: Array<News> = [
     {
       title: 'TROCA-TROCA DE MINISTROS E CLOROQUINA LIBERADA - CASSETA & PLANETA',
       article: 'Incidunt voluptas voluptatem quam aut. Repellendus impedit et dolores ea. Dolorem hic qui soluta. Fugit ad id.',
@@ -31,7 +31,8 @@ export class NewsService {
         { id: 8, name: 'Categoria 8' },
         { id: 2, name: 'Categoria 2' },
         { id: 10, name: 'Categoria 10' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Students are failing AP tests because the College Board can’t handle HEIC images ',
@@ -43,7 +44,8 @@ export class NewsService {
         { id: 5, name: 'Categoria 5' },
         { id: 6, name: 'Categoria 6' },
         { id: 9, name: 'Categoria 9' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'California affordable housing is more expensive than luxury housing',
@@ -56,7 +58,8 @@ export class NewsService {
         { id: 5, name: 'Categoria 5' },
         { id: 7, name: 'Categoria 7' },
         { id: 9, name: 'Categoria 9' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Stealing Secrets from Developers Using Websockets',
@@ -71,7 +74,8 @@ export class NewsService {
         { id: 3, name: 'Categoria 3' },
         { id: 10, name: 'Categoria 10' },
         { id: 9, name: 'Categoria 9' },
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Facebook to Shift Permanently Toward More Remote Work After Coronavirus',
@@ -86,7 +90,8 @@ export class NewsService {
         { id: 7, name: 'Categoria 7' },
         { id: 2, name: 'Categoria 2' },
         { id: 3, name: 'Categoria 3' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Dolphins at popular spot miss tourists and keep leaving "gifts" on shore',
@@ -99,7 +104,8 @@ export class NewsService {
         { id: 8, name: 'Categoria 8' },
         { id: 4, name: 'Categoria 4' },
         { id: 10, name: 'Categoria 10' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Show HN: Blunt – A CSS Layout Framework for Minimalists',
@@ -114,7 +120,8 @@ export class NewsService {
         { id: 7, name: 'Categoria 7' },
         { id: 3, name: 'Categoria 3' },
         { id: 6, name: 'Categoria 6' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Arduino Pinball Machine That Plays Itself',
@@ -127,7 +134,8 @@ export class NewsService {
         { id: 5, name: 'Categoria 5' },
         { id: 7, name: 'Categoria 7' },
         { id: 10, name: 'Categoria 10' },
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Introducing Apache Druid 0.18.0 ',
@@ -141,7 +149,8 @@ export class NewsService {
         { id: 9, name: 'Categoria 9' },
         { id: 10, name: 'Categoria 10' },
         { id: 7, name: 'Categoria 7' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Organ transplants down as stay-at-home rules reduce fatal traffic collisions',
@@ -155,7 +164,8 @@ export class NewsService {
         { id: 5, name: 'Categoria 5' },
         { id: 7, name: 'Categoria 7' },
         { id: 6, name: 'Categoria 6' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'McLibel Case',
@@ -168,7 +178,8 @@ export class NewsService {
       categories: [
         { id: 5, name: 'Categoria 5' },
         { id: 7, name: 'Categoria 7' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Show HN: Python package to collect normalized news from almost any website',
@@ -180,7 +191,8 @@ export class NewsService {
         { id: 7, name: 'Categoria 7' },
         { id: 10, name: 'Categoria 10' },
         { id: 2, name: 'Categoria 2' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Show HN: SpaceX Dragon simulator docking autopilot in Clojure',
@@ -193,7 +205,8 @@ export class NewsService {
         { id: 8, name: 'Categoria 8' },
         { id: 2, name: 'Categoria 2' },
         { id: 6, name: 'Categoria 6' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'The FBI tracking your browsing history without a warrant might be the beginning',
@@ -207,7 +220,8 @@ export class NewsService {
         { id: 5, name: 'Categoria 5' },
         { id: 7, name: 'Categoria 7' },
         { id: 9, name: 'Categoria 9' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Shopify Goes Digital by Default',
@@ -220,26 +234,39 @@ export class NewsService {
         { id: 10, name: 'Categoria 10' },
         { id: 5, name: 'Categoria 5' },
         { id: 9, name: 'Categoria 9' }
-      ]
+      ],
+      teams: []
     },
     {
       title: 'Ceará e Fortaleza podem ter treinos liberados na 1ª fase do plano do Governo de retomada',
       source: 'https://globoesporte.globo.com/ce/futebol/noticia/ceara-e-fortaleza-podem-ter-treinos-liberados-na-1a-fase-do-plano-do-governo-de-retomada.ghtml',
+      categories: [],
+      article: '',
+      image: '',
       teams: ['ceara', 'fortaleza']
     },
     {
       title: 'Irmão e primo viram "técnicos" de zagueiro do Ceará para o Futebol de Casa',
       source: 'https://globoesporte.globo.com/ce/futebol/times/ceara/noticia/irmao-e-primo-viram-tecnicos-de-zagueiro-do-ceara-para-o-futebol-de-casa.ghtml',
+      categories: [],
+      article: '',
+      image: '',
       teams: ['ceara']
     },
     {
       title: 'JOGO EM CASA #37 - ANSIEDADE, DEPRESSÃO E MEDO DE LESÕES: OS FANTASMAS DOS ATLETAS NA QUARENTENA',
       source: 'https://interativos.globoesporte.globo.com/podcasts/programa/jogo-em-casa/',
+      categories: [],
+      article: '',
+      image: '',
       teams: ['ceara', 'fortaleza']
     },
     {
       title: '"Superpai", Mateus Gonçalves relata rotina entre filha e treinos do Ceará',
       source: 'https://globoesporte.globo.com/ce/futebol/times/ceara/noticia/super-pai-mateus-goncalves-relata-rotina-entre-filha-e-treinos-do-ceara.ghtml',
+      categories: [],
+      article: '',
+      image: '',
       teams: ['ceara']
     },
 

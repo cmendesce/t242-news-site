@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Team } from '../models/team.model';
 
 @Injectable({
   providedIn: 'root'
@@ -110,11 +111,11 @@ export class TeamsService {
     }
   ];
 
-  findTeams() {
+  findTeams(): Array<Team> {
     return this.teams;
   }
 
-  findTeamByKey(key) {
+  findTeamByKey(key): Team {
     return this.teams.find(t => t.key === key);
   }
 }

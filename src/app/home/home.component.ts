@@ -1,3 +1,4 @@
+import { News } from './../models/news.model';
 import { NewsService } from './../services/news.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  breakingNews = {};
-  relatedNews = [];
+  breakingNews: News;
+  relatedNews: Array<News> = [];
 
   constructor(private service: NewsService) { }
 

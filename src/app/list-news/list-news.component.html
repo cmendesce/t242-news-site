@@ -4,7 +4,7 @@
 
 <h1 *ngIf="term">{{term}}</h1>
 
-<h1 *ngIf="team" ><img src="{{team.flag}}" width="42" height="42"> {{team.name}}</h1>
+<h1 *ngIf="team" ><img src="{{team.flag}}" width="42" height="42"> {{team?.name}}</h1>
 
 <div class="row" style="padding: 16px">
 
@@ -13,7 +13,6 @@
   </div>
 
   <div class="card" *ngFor="let news of newsList" class="card" style="width: 18rem; margin: 18px 14px">
-    <img src="http://placekitten.com/200/300" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">
         {{news.title}}
